@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Rating</title>
+</head>
+
+<body>
+
+    <div class="content">
+        
+    <!-- User one -->
+    <div class="user piotr">
+        <div class="img"></div>
+        <div class="container">
+            <h4><b>Piotr</b></h4>
+            <p>Front-End Developer</p>
+
+            <div class="stars-outer">
+            <div class="stars-inner"></div>
+        </div>
+        <span class="number-rating"></span>
+        </div>
+        
+    </div>
+
+    <!-- User two -->
+    <div class="user bartosz">
+        <div class="img"></div>
+        <div class="container">
+            <h4><b>Bartosz</b></h4>
+            <p>Front-End Developer</p>
+        </div>
+        <div class="stars-outer">
+            <div class="stars-inner"></div>
+        </div>
+        <span class="number-rating"></span>
+    </div>
+
+    <!-- user three -->
+    <div class="user jakub">
+        <div class="img"></div>
+        <div class="container">
+            <h4><b>Jakub</b></h4>
+            <p>Back-End Developer</p>
+        </div>
+        <div class="stars-outer">
+            <div class="stars-inner"></div>
+        </div>
+        <span class="number-rating"></span>
+    </div>
+</div>
+
+    <div class="container mt-5">
+        <div class="form-group">
+            <select id="user-select" class="form-control custom-select">
+                <option value="0" disabled selected>Select User</option>
+                <option value="piotr">Rate Piotr</option>
+                <option value="bartosz">Rate Bartosz</option>
+                <option value="jakub">Rate Jakub</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="number" id="rating-control" class="form-control" step="0.1" min="1" max="5"
+                placeholder="Rate 1 - 5" disabled>
+        </div>
+
+       
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
