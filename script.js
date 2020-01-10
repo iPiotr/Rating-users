@@ -1,8 +1,9 @@
 // Initial Ratings
 let ratings = {
-    piotr: 3.8,
-    bartosz: 4.4,
-    jakub: 3.2
+    piotr: 0,
+    bartosz: 0,
+    jakub: 0,
+    maciek: 0,
 }
 
 // Total Stars
@@ -10,6 +11,26 @@ const starsTotal = 5;
 
 // Run getRatings when DOM loads
 document.addEventListener('DOMContentLoaded', getRatings);
+let ratingsUser = Object.values(ratings);
+console.log(localStorage.ratingsUser);
+ratings = localStorage.ratingsUser;
+console.log(ratings);
+ratinggg = document.getElementsByClassName('number-rating');
+ratingsUser = ratinggg;
+console.log(ratingsUser);
+console.log(ratinggg);
+
+
+
+
+$(".access").click(function () {
+    console.log(localStorage);
+
+    // Retrieve data
+    
+    console.log(ratingControll);
+
+});
 
 // Form Elements
 const userSelect = document.getElementById('user-select');
@@ -21,25 +42,47 @@ let user;
 // User select change
 userSelect.addEventListener('change', (e) => {
     user = e.target.value;
+    console.log(e.target.value);
+    
     // Enable rating control
     ratingControl.disabled = false;
     ratingControl.value = ratings[user];
 });
 
 // Rating control change
-ratingControl.addEventListener('blur', (e) => {
-    const rating = e.target.value;
+ratingControl.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        // code for enter
+        const rating = e.target.value;
 
-    if (rating > 5 || rating < 1) {
-        alert('Please rate 1 - 5');
-        return;
+        if (rating > 5 || rating < 1) {
+            alert('Please rate 1 - 5');
+            return;
+        }
+
+        // Change rating
+        ratings[user] = rating;
+
+        $(document).ready(function () {
+            $(".save").click(function () {
+                // Get input name
+
+                let ratingsUser = Object.values(ratings);
+                console.log(ratings);
+
+                // Store data
+                localStorage.setItem("ratingsUser", ratingsUser);
+            });
+            
+        });
+
+
+
+        getRatings();
     }
 
-    // Change rating
-    ratings[user] = rating;
-
-    getRatings();
 });
+
 
 // Get ratings
 function getRatings() {
@@ -51,9 +94,10 @@ function getRatings() {
         const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
 
         // Set width of stars-inner to percentage
-        document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+        // document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
 
         // Add number rating
-        document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
+        // document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
+
     }
 }

@@ -9,6 +9,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <title>Rating</title>
 </head>
 
@@ -26,7 +28,7 @@
             <div class="stars-outer">
             <div class="stars-inner"></div>
         </div>
-        <span class="number-rating"></span>
+        <span class="number-rating" id="piotr"></span>
         </div>
         
     </div>
@@ -56,6 +58,19 @@
         </div>
         <span class="number-rating"></span>
     </div>
+
+    <!-- user four -->
+    <div class="user maciek">
+        <div class="img"></div>
+        <div class="container">
+            <h4><b>Maciek</b></h4>
+            <p>Back-End Developer</p>
+        </div>
+        <div class="stars-outer">
+            <div class="stars-inner"></div>
+        </div>
+        <span class="number-rating"></span>
+    </div>
 </div>
 
     <div class="container mt-5">
@@ -65,6 +80,7 @@
                 <option value="piotr">Rate Piotr</option>
                 <option value="bartosz">Rate Bartosz</option>
                 <option value="jakub">Rate Jakub</option>
+                <option value="maciek">Rate Maciek</option>
             </select>
         </div>
         <div class="form-group">
@@ -72,6 +88,8 @@
                 placeholder="Rate 1 - 5" disabled>
         </div>
 
+            <button type="button" class="save">Save Name</button>
+            <button type="button" class="access">Get Name</button>
        
     </div>
 
