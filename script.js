@@ -13,22 +13,16 @@ const starsTotal = 5;
 document.addEventListener('DOMContentLoaded', getRatings);
 let ratingsUser = Object.values(ratings);
 console.log(localStorage.ratingsUser);
-ratings = localStorage.ratingsUser;
-console.log(ratings);
-ratinggg = document.getElementsByClassName('number-rating');
-ratingsUser = ratinggg;
+ratingsUser = localStorage.ratingsUser;
 console.log(ratingsUser);
-console.log(ratinggg);
-
-
 
 
 $(".access").click(function () {
     console.log(localStorage);
 
     // Retrieve data
-    
-    console.log(ratingControll);
+    ratingControll = document.getElementsByClassName('number-rating');
+    console.log(ratings);
 
 });
 
@@ -94,10 +88,10 @@ function getRatings() {
         const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
 
         // Set width of stars-inner to percentage
-        // document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+        document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
 
         // Add number rating
-        // document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
+        document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
 
     }
 }
