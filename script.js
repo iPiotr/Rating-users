@@ -36,7 +36,7 @@ let user;
 // User select change
 userSelect.addEventListener('change', (e) => {
     user = e.target.value;
-    console.log(e.target.value);
+
     
     // Enable rating control
     ratingControl.disabled = false;
@@ -63,6 +63,8 @@ ratingControl.addEventListener('keypress', (e) => {
 
                 let ratingsUser = Object.values(ratings);
                 console.log(ratings);
+                console.log(ratingsUser[user]);
+                
 
                 // Store data
                 localStorage.setItem("ratingsUser", ratingsUser);
