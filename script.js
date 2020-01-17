@@ -12,17 +12,13 @@ const starsTotal = 5;
 // Run getRatings when DOM loads
 document.addEventListener('DOMContentLoaded', getRatings);
 let ratingsUser = Object.values(ratings);
-console.log(localStorage.ratingsUser);
 ratingsUser = localStorage.ratingsUser;
-console.log(ratingsUser);
 
 
 $(".access").click(function () {
-    console.log(localStorage);
 
     // Retrieve data
     ratingControll = document.getElementsByClassName('number-rating');
-    console.log(ratings);
 
 });
 
@@ -62,9 +58,6 @@ ratingControl.addEventListener('keypress', (e) => {
                 // Get input name
 
                 let ratingsUser = Object.values(ratings);
-                console.log(ratings);
-                console.log(ratingsUser[user]);
-                
 
                 // Store data
                 localStorage.setItem("ratingsUser", ratingsUser);
@@ -96,4 +89,15 @@ function getRatings() {
         document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
 
     }
+}
+
+function myFunction() {
+    // Get the snackbar DIV
+    var x = document.getElementById("snackbar");
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 3 seconds, remove the show class from DIV
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
